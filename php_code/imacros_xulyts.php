@@ -28,6 +28,7 @@ PAUSE
 TAB T=2
 'URL GOTO=http://localhost/test_code/vendor/thituyensinh_chrome.php
 REFRESH
+WAIT SECONDS=2
 
 ' nguyen phan nay da chuyen xuong phia duoi
 'SET !EXTRACT_TEST_POPUP NO
@@ -70,7 +71,7 @@ TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:seblod_form ATTR=ID:ts_hinhthuctuyen2 CONT
 TAB T=2
 TAG POS=1 TYPE=DIV ATTR=ID:id-thong-tin-chung EXTRACT=HTM
 TAB T=3
-TAG POS=1 TYPE=TEXTAREA FORM=ID:seblod_form ATTR=ID:ts_tincuatruong CONTENT={{!EXTRACT}}
+TAG POS=1 TYPE=TEXTAREA FORM=ID:seblod_form ATTR=ID:ts_tincuatruong CONTENT="{{!EXTRACT}}"
 SET !EXTRACT NULL
 ' ngung de xem cac thong tin va option them cho doi tuong tuyen sinh
 PAUSE
@@ -80,14 +81,17 @@ PAUSE
 TAB T=2
 TAG POS=1 TYPE=TABLE ATTR=ID:table-ts-daihoc EXTRACT=HTM
 TAB T=3
-TAG POS=1 TYPE=TEXTAREA FORM=ID:seblod_form ATTR=ID:ts_nganhtuyensinh3 CONTENT={{!EXTRACT}}
+'"{{!EXTRACT}}" co dau ngoac kep de giu tag br lai
+TAG POS=1 TYPE=TEXTAREA FORM=ID:seblod_form ATTR=ID:ts_nganhtuyensinh3 CONTENT="{{!EXTRACT}}"
 SET !EXTRACT NULL
+
+
 
 '--------------- copy thong tin tu php sang form 
 TAB T=2
 TAG POS=1 TYPE=DIV ATTR=ID:id-thong-tin-daydu EXTRACT=HTM
 TAB T=3
-TAG POS=1 TYPE=TEXTAREA FORM=ID:seblod_form ATTR=ID:ts_artfulltext CONTENT={{!EXTRACT}}
+TAG POS=1 TYPE=TEXTAREA FORM=ID:seblod_form ATTR=ID:ts_artfulltext CONTENT="{{!EXTRACT}}"
 SET !EXTRACT NULL
 
 
