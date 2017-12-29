@@ -1,4 +1,5 @@
-' can mo san cac tab truoc
+'FULL phien ban chinh, danh cho firefox
+'can mo san cac tab truoc
 'view systan scala
 VERSION BUILD=9030808 RECORDER=FX
 TAB T=1
@@ -28,7 +29,7 @@ PAUSE
 TAB T=2
 'URL GOTO=http://localhost/test_code/vendor/thituyensinh_chrome.php
 REFRESH
-WAIT SECONDS=2
+WAIT SECONDS=1
 
 ' nguyen phan nay da chuyen xuong phia duoi
 'SET !EXTRACT_TEST_POPUP NO
